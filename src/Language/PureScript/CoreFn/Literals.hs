@@ -12,9 +12,15 @@
 --
 -----------------------------------------------------------------------------
 
+{-# LANGUAGE DeriveFunctor #-}
+{-# LANGUAGE DeriveFoldable #-}
+{-# LANGUAGE DeriveTraversable #-}
 {-# LANGUAGE DeriveDataTypeable #-}
 
 module Language.PureScript.CoreFn.Literals where
+
+import Data.Foldable
+import Data.Traversable
 
 import qualified Data.Data as D
 
@@ -42,4 +48,4 @@ data Literal a
   -- |
   -- An object literal
   --
-  | ObjectLiteral [(String, a)] deriving (Show, D.Data, D.Typeable)
+  | ObjectLiteral [(String, a)] deriving (Show, Functor, Foldable, Traversable, D.Data, D.Typeable)
