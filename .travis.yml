@@ -1,6 +1,7 @@
 language: c
 dist: trusty # because of perf issues
 sudo: false
+group: beta
 matrix:
   include:
     # The 'compiler' key is a hack to get Travis to use different caches for
